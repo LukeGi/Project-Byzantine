@@ -5,6 +5,8 @@ import com.blue.projbyz.blocks.CobbleCreator.Tile;
 import com.blue.projbyz.core.BlockByz.TileBlockByz;
 import com.blue.projbyz.core.CreativeTabsByz;
 import com.blue.projbyz.core.TileByz;
+import com.blue.projbyz.modules.InventoryModule;
+import com.blue.projbyz.modules.PowerModule;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 
@@ -37,6 +39,12 @@ public class CobbleCreator extends TileBlockByz<Tile> {
     }
 
     public static class Tile extends TileByz {
+        PowerModule powerModule = new PowerModule(32000);
+        InventoryModule inventoryModule = new InventoryModule(36);
 
+        public Tile() {
+            super();
+            super.addModules(powerModule, inventoryModule);
+        }
     }
 }

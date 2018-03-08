@@ -1,11 +1,15 @@
 package com.blue.projbyz;
 
 import net.minecraftforge.fml.common.Mod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static com.blue.projbyz.ProjByz.Info.*;
 
 @Mod(modid = MOD_ID, name = MOD_NAME, version = MOD_VERSION, dependencies = DEPENDANCIES, acceptedMinecraftVersions = MC_VERSION)
 public final class ProjByz {
+
+    public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
 
     private ProjByz() {
     }
