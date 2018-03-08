@@ -1,17 +1,14 @@
 package com.blue.projbyz.core;
 
 import com.blue.projbyz.ProjByz.Info;
-import com.blue.projbyz.core.registry.Item;
-import com.blue.projbyz.core.registry.Registry;
+import com.blue.projbyz.core.registry.ModelRegisterer;
 import net.minecraftforge.client.model.ModelLoader;
 
-public abstract class ItemImpl extends net.minecraft.item.Item implements Item {
+public abstract class ItemByz extends net.minecraft.item.Item implements ModelRegisterer {
 
-    public ItemImpl(String name) {
+    public ItemByz(String name) {
         this.setRegistryName(Info.MOD_PREFIX + name);
         this.setUnlocalizedName(Info.MOD_PREFIX + name);
-
-        Registry.INSTANCE.register(this);
     }
 
     @Override

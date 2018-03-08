@@ -13,7 +13,7 @@ public interface ModelRegisterer {
     }
 
     default ModelResourceLocation[] getVariants() {
-        return new ModelResourceLocation[]{LocationUtils.InventoryVariant(this)};
+        return new ModelResourceLocation[]{LocationUtils.newInventoryVariant(this)};
     }
 
     ResourceLocation getRegistryName();
