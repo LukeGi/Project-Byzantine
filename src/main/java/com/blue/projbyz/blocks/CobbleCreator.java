@@ -39,6 +39,7 @@ public class CobbleCreator extends TileBlockByz<Tile> {
     }
 
     public static class Tile extends TileByz {
+
         PowerModule powerModule = new PowerModule(32000);
         InventoryModule inventoryModule = new InventoryModule(36);
 

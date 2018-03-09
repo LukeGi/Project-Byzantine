@@ -6,6 +6,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import scala.actors.threadpool.Arrays;
 
 import javax.annotation.Nullable;
 
@@ -25,9 +26,32 @@ public class InventoryModule extends ItemStackHandler implements Module {
     }
 
     @Override
+    public int hashCode() {
+        return stacks.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof InventoryModule)) return false;
+
+        InventoryModule that = (InventoryModule) o;
+
+        return stacks.equals(that.stacks);
+    }
+
+    @Override
+    public String toString() {
+        return "InventoryModule{" +
+                "stacks=" + Arrays.deepToString(stacks.toArray(new ItemStack[0])) +
+                '}';
+    }
+
+    @Override
     public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
         return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.equals(capability);
     }
+
 
     @Override
     @Nullable
@@ -35,8 +59,11 @@ public class InventoryModule extends ItemStackHandler implements Module {
         return hasCapability(capability, facing) ? CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this) : null;
     }
 
+
     @Override
     public String getName() {
         return NAME;
     }
+
+
 }
