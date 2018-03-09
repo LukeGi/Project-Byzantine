@@ -1,0 +1,14 @@
+[
+  {
+    "modid": "projbyz",
+    "name": "Project Byzantine",
+    "description": "A secret",
+    "version": "${version}",
+    "mcversion": "${mc_version}",
+    "updateUrl": "",
+    "authors": [
+      "bluemonster122"
+    ],
+    "credits": ""
+  }
+]
